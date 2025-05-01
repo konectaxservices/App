@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – KonectaX</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+      margin: 0;
+      padding: 0;
+    }
+    .navbar { background-color: #f3f3f3; }
+    .navbar-brand, .nav-link { color: #00bcd4; font-weight: 600; }
+    .navbar-brand { font-size: 1.8rem; font-weight: 700; }
+    .nav-link:hover { color: #dd12a0; }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1596495577886-d920f1fb7238') center/cover no-repeat;
+      padding: 100px 0;
+      text-align: center;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .hero p {
+      font-size: 20px;
+      max-width: 800px;
+      margin: 20px auto 0;
+    }
+    .hero p b {
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+
+    .form-section {
+      background: #ffffff;
+      padding: 60px;
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: -60px auto 60px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .form-section h2 {
+      text-align: center;
+      color: #009688;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .form-control {
+      background-color: #f8f9fa;
+      border-color: #ccc;
+      border-radius: 8px;
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+
+    .btn-submit {
+      background-color: #4caf50;
+      border: none;
+      padding: 12px 30px;
+      color: white;
+      font-weight: bold;
+      border-radius: 30px;
+    }
+
+    .btn-submit:hover {
+      background-color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+        <img src="logo.png" alt="KonectaX Logo" style="height: 40px;">
+      </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p><b>Need assistance or have questions? We're just a message away.</b></p>
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="form-section">
+  <h2>Send Us a Message</h2>
+  <form id="contact-form" action="https://formspree.io/f/yourformid" method="POST">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">Full Name *</label>
+        <input type="text" class="form-control" name="name" required>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Email Address *</label>
+        <input type="email" class="form-control" name="email" required>
+      </div>
+      <div class="col-12">
+        <label class="form-label">Subject *</label>
+        <input type="text" class="form-control" name="subject" required>
+      </div>
+      <div class="col-12">
+        <label class="form-label">Message *</label>
+        <textarea class="form-control" name="message" rows="6" required></textarea>
+      </div>
+      <div class="col-12 text-center mt-4">
+        <button type="submit" class="btn btn-submit">Send Message</button>
+      </div>
+      <div class="col-12 mt-3 text-center" id="form-response" style="display: none;"></div>
+    </div>
+  </form>
+</section>
+<!-- Social Media Section -->
+<section class="py-5 text-center" style="background-color: #e0f7fa;">
+    <div class="container">
+      <h3 class="mb-4" style="color: #009688;">Stay Connected with Us</h3>
+      <p class="mb-4">Reach us anytime via our socials or directly through <strong>konectaxservices@gmail.com</strong></p>
+      <div class="d-flex justify-content-center gap-4 fs-3">
+        <a href="https://www.facebook.com/share/18xQnsbnJ2/?mibextid=wwXIfr" target="_blank" class="text-decoration-none" style="color: #3b5998;">
+          <i class="bi bi-facebook"></i> Facebook
+        </a>
+        <a href="https://www.instagram.com/konectax?igsh=MTA3NDYwZ3lxaHUzNg%3D%3D&utm_source=qr" target="_blank" class="text-decoration-none" style="color: #E1306C;">
+          <i class="bi bi-instagram"></i> Instagram
+        </a>
+        <a href="https://www.tiktok.com/@konectax252?_t=ZN-8vmAugnrCeE&_r=1" target="_blank" class="text-decoration-none" style="color: #000;">
+          <i class="bi bi-tiktok"></i> TikTok
+        </a>
+      </div>
+    </div>
+  </section>
+  
+
+<!-- JS Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    const responseBox = document.getElementById("form-response");
+    const submitBtn = form.querySelector("button[type='submit']");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" }
+      })
+      .then(response => {
+        if (response.ok) {
+          form.reset();
+          responseBox.style.display = "block";
+          responseBox.style.color = "green";
+          responseBox.textContent = "Thank you! Your message has been sent.";
+        } else {
+          throw new Error("Network response was not ok.");
+        }
+      })
+      .catch(error => {
+        responseBox.style.display = "block";
+        responseBox.style.color = "red";
+        responseBox.textContent = "Oops! Something went wrong. Please try again.";
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+      });
+    });
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

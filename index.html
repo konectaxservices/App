@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KonectaX - Your Global Assistant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+   /* Body Section */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa; /* Light cyan background for a fresh look */
+}
+
+/* Navbar Section */
+.navbar {
+    background-color: #00bcd4; /* Light teal for a soft, approachable look */
+}
+
+.navbar .navbar-brand {
+    font-weight: bold;
+    color: #ffffff !important; /* White for the brand name for high contrast */
+}
+
+/* Navbar Links */
+.navbar .navbar-nav .nav-link {
+    color: #333; /* Dark text for better readability */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Navbar Link Hover Effect */
+.navbar .navbar-nav .nav-link:hover {
+    color: #00796b !important; /* Darker teal for hover effect */
+}
+
+    #hero {
+  background-image: url('https://img.freepik.com/free-photo/male-female-business-people-working-tablet-office_1303-22827.jpg ');
+  background-size: contain;         /* Shows full image without cropping */
+  background-repeat: no-repeat;     /* Prevents image tiling */
+  background-position: center;      /* Centers the image */
+  background-attachment: fixed;     /* Keeps image fixed on scroll */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #0ddfdf;
+  position: relative;
+}
+
+
+    #hero .overlay {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay for text contrast */
+      z-index: 0;
+    }
+
+    #hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    #hero h1, #hero p {
+      z-index: 1;
+    }
+
+    #hero .btn-custom {
+      z-index: 1;
+    }
+    .btn-custom {
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 25px;
+      padding: 12px 30px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      z-index: 1;
+    }
+    .btn-custom:hover {
+      background-color: #eb099f;
+    }
+    section {
+      padding: 80px 0;
+    }
+    .section-header {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 30px;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    .card-body {
+      text-align: center;
+      padding: 30px;
+      background-color: white;
+    }
+    .card i {
+      font-size: 40px;
+      color: #007bff;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover i {
+      transform: scale(1.2);
+      color: #e90a79;
+    }
+    .whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out, background 0.3s;
+  text-decoration: none;
+}
+
+.whatsapp-float i {
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.2);
+  background: #20c659;
+}
+
+    footer {
+      background-color: #333;
+      color: #ccc;
+      padding: 40px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Section Colors */
+   /* Section 1: About Section */
+#about {
+    background-color: #e0f7fa; /* Light cyan */
+    color: #333; /* Dark text for readability */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2rem;
+    color: #00796b; /* Darker teal for headers */
+}
+
+/* Section 2: Features Section */
+#features {
+    background-color: #f8d7da; /* Soft light red (lightened maroon) */
+    color: #333; /* Dark text */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#features h2 {
+    font-size: 2rem;
+    color: #b71c1c; /* Darker red for headers */
+}
+
+/* Section 3: Contact Section */
+#contact {
+    background-color: #c0f0ed; /* Light turquoise */
+    color: #333; /* Dark text for readability */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    color: #00796b; /* Dark teal for headers */
+}
+
+/* Section 4: Meet the Team Section */
+#meet-the-team {
+    background-color: #e2bfd4; /* White background */
+    color: #333; /* Dark text */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#meet-the-team h2 {
+    font-size: 2rem;
+    color: #4b4b4b; /* Soft grey for headers */
+}
+
+    .carousel-item {
+      position: relative;
+      height: 50vh;
+      min-height: 200px;
+      overflow: hidden;
+    }
+
+   .carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* or your desired section height */
+  object-fit: contain; /* Keep full image visible without cropping */
+  margin: 0 auto;
+  border-radius: 12px; /* Optional: gives rounded corners for a polished look */
+}
+
+
+    .carousel-caption {
+      bottom: 20%;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-caption h5 {
+        font-size: 1.5rem;
+      }
+
+      .carousel-caption p {
+        font-size: 1rem;
+      }
+    }
+    /* Ensure the carousel is positioned relative for absolute elements */
+.carousel {
+  position: relative;
+}
+
+/* Base styling for carousel control buttons */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Center buttons vertically */
+  z-index: 10; /* Ensure buttons stay on top of the images */
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  border: none;
+  padding: 10px;
+  border-radius: 50%; /* Make buttons circular */
+  width: 50px; /* Button size */
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
+}
+
+/* Hover effect for buttons */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(0, 0, 0, 0.6); /* Darker background on hover */
+  transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+/* Ensure previous button is on the left */
+.carousel-control-prev {
+  left: 10px;
+}
+
+/* Ensure next button is on the right */
+.carousel-control-next {
+  right: 10px;
+}
+
+/* Style for the icons inside buttons (using FontAwesome or Bootstrap icons) */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  font-size: 24px; /* Adjust icon size */
+  color: white; /* White icon for visibility */
+}
+
+/* Optional: You can use FontAwesome icons for more modern look */
+.carousel-control-prev-icon::before {
+  content: '\f104'; /* FontAwesome "previous" icon */
+  font-family: "Font Awesome 5 Free"; /* Make sure FontAwesome is loaded */
+  font-weight: 900; /* Bold icon */
+}
+
+.carousel-control-next-icon::before {
+  content: '\f105'; /* FontAwesome "next" icon */
+  font-family: "Font Awesome 5 Free"; /* Make sure FontAwesome is loaded */
+  font-weight: 900; /* Bold icon */
+}
+
+    
+  </style>
+</head>
+<body>
+
+<!-- 🌐 Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="https://th.bing.com/th/id/OIP.8zRK1y2fXlvdyaI5T9CwwQHaEO?rs=1&pid=ImgDetMain" alt="KonectaX Logo" style="height: 40px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="nav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#about"><b>About</b></a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact"><b>Contact</b></a></li>
+        <li class="nav-item"><a class="nav-link" href="#services"><b>Services</b></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- 🏠 Hero -->
+<header id="hero" class="fade-in">
+    <div class="container">
+      <div class="row justify-content-center align-items-center" style="height: 100vh; z-index: 1;">
+        <div class="col-12 text-center">
+          <h1 style="font-size: 60px; font-weight: bold; color: white;">Welcome to KonectaX</h1>
+          <p style="font-size: 20px; color: white;">Your one-stop platform for global services – Travel, Study, Support & More</p>
+          <a href="#services" class="btn btn-custom">Explore Services</a>
+        </div>
+      </div>
+    </div>
+    <div class="overlay"></div> <!-- Dark overlay for contrast -->
+  </header>
+  
+
+
+
+  
+
+
+
+<!-- 🚀 services -->
+<section id="services" class="fade-in">
+  <div class="container">
+    <h2 class="section-header">Our Services</h2>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <i class="fas fa-notes-medical"></i>
+            <h5>Medical Translator</h5>
+            <p>Translate prescriptions and documents in your preferred language.</p>
+            <a href="medical.html" class="btn btn-custom">Apply</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <i class="fas fa-money-bill-wave"></i>
+            <h5>Money Exchange</h5>
+            <p>Get real-time currency conversions and exchange support.</p>
+            <a href="exchange.html" class="btn btn-custom">Apply</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <i class="fas fa-plane-departure"></i>
+            <h5>Travel Services</h5>
+            <p>Visa help, travel advice, flight guidance, and more.</p>
+            <a href="travel.html" class="btn btn-custom">Apply</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center mt-4">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <i class="fas fa-user-graduate"></i>
+            <h5>Student Admission</h5>
+            <p>Get help choosing the right university, guidance through the application process, and full support with uploading your documents.</p>
+            <a href="education.html" class="btn btn-custom">Apply</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <i class="fas fa-bed"></i>
+            <h5>Room Accommodation Services</h5>
+            <p>Affordable room and housing options for students and travelers, matched to your budget and needs.</p>
+            <a href="room.html" class="btn btn-custom">Apply</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- 🔄 Horizontal Scroll Gallery Section -->
+  <div id="konectaxCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <img src="slide1.jpg" class="d-block w-100" alt="Technology">
+        <div class="carousel-caption text-start text-white">
+          <h5>Welcome to KonectaX</h5>
+          <p>Empowering education and services through technology.</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <img src="slide2.jpg" class="d-block w-100" alt="Education">
+        <div class="carousel-caption text-start text-white">
+          <h5>Education Hub</h5>
+          <p>Explore courses, projects, and learning paths curated for growth.</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <img src="https://th.bing.com/th/id/OIP.8zRK1y2fXlvdyaI5T9CwwQHaEO?rs=1&pid=ImgDetMain" class="d-block w-100" alt="Services">
+        <div class="carousel-caption text-start text-white">
+          <h5>Service Hub</h5>
+          <p>Unlock exclusive access to services and business support tools.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#konectaxCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#konectaxCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+ 
+
+  <!-- Add more slides here -->
+</section>
+
+<!-- 🟢 WhatsApp Button -->
+<a href="https://wa.me/1234567890" class="whatsapp-float" title="Chat with us">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- 🔍 About Us -->
+<section id="about" class="fade-in">
+  <div class="container">
+    <h2 class="section-header">About KonectaX</h2>
+    <p>
+      KonectaX is a global assistance platform that bridges gaps in communication, access, and opportunity.
+      Whether you're a student planning to study abroad, a traveler in need of medical translation, or someone looking for safe accommodation,
+      KonectaX provides tailored services to simplify your journey.
+    </p>
+    <!-- Learn More Button -->
+    <a href="about.html" class="btn btn-custom">Learn More</a>
+  </div>
+</section>
+<!-- 📞 Contact Us -->
+<section id="contact" class="text-center py-5 fade-in">
+  <div class="container">
+    <h2 class="section-header">Contact Us</h2>
+    <p><strong>Email:</strong> <a href="mailto:konectaxservices@gmail.com">konectaxservices@gmail.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+1234567890">+1234567890</a></p>
+    <p><strong>Location:</strong> Hyderabad, India</p>
+    <a href="contact.html" class="btn btn-custom">click to know more </a>
+  </div>
+</section>
+
+
+
+
+<!-- Footer -->
+<!-- Load Footer -->
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    })
+    .catch(error => {
+      console.error("Failed to load footer:", error);
+    });
+</script>
+
+
+<!-- Bootstrap JS and dependencies -->
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

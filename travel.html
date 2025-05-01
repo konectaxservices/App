@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Support – KonectaX</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+      margin: 0;
+      padding: 0;
+    }
+    .navbar { background-color: #009688; }
+    .navbar-brand { color: white; font-weight: 700; font-size: 1.8rem; }
+    .navbar-nav .nav-link { color: white; font-weight: 600; }
+    .navbar-nav .nav-link:hover { color: #f0f4ff; }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1502920514313-52581002a659') center/cover no-repeat;
+      padding: 100px 0;
+      text-align: center;
+      color: white;
+    }
+    .hero h1 { font-size: 52px; font-weight: 700; text-transform: uppercase; }
+    .hero p { font-size: 20px; max-width: 800px; margin: 20px auto 0; }
+    .form-section {
+      background: #ffffff;
+      padding: 60px;
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+      max-width: 1000px;
+      margin: -60px auto 60px;
+      position: relative;
+      z-index: 10;
+    }
+    .form-section h2 {
+      text-align: center;
+      color: #009688;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+    .form-control:focus {
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+    .btn-primary {
+      background-color: #009688;
+      border: none;
+      padding: 12px 35px;
+      font-weight: 600;
+      border-radius: 30px;
+    }
+    .btn-primary:hover { background-color: #00796b; }
+    .form-control {
+      background-color: #f8f9fa;
+      border-color: #ccc;
+      border-radius: 8px;
+    }
+    .form-check-input:checked {
+      background-color: #009688;
+      border-color: #009688;
+    }
+    .form-group label { font-weight: 600; }
+    .form-section .row {
+      background: linear-gradient(45deg, #e0f7fa, #b2ebf2);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .btn-submit {
+      background: #4caf50;
+      border: none;
+      padding: 12px 30px;
+      font-weight: bold;
+      color: white;
+      border-radius: 30px;
+    }
+    .btn-submit:hover { background-color: #388e3c; }
+    .hero p b {
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <!-- Brand Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="logo.png" alt="KonectaX Logo" style="height: 40px;">
+    </a>
+
+    <!-- Hamburger Button for Mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Navbar Menu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Bootstrap JS (Important for collapsible navbar) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>Travel Support</h1>
+    <p><b>We help students and travelers with visa guidance, ticketing, pre-departure briefings, and more for a smooth journey.</b></p>
+  </div>
+</section>
+
+<!-- Form Section -->
+<section class="form-section">
+  <h2>Submit Your Travel Query</h2>
+  <form id="travel-form" action="https://formspree.io/f/mblojybj" method="POST">
+    <div class="row g-3">
+      <!-- Basic Fields -->
+      <div class="col-md-6"><label class="form-label">Full Name *</label><input type="text" class="form-control" name="full_name" required></div>
+      <div class="col-md-6"><label class="form-label">Email Address *</label><input type="email" class="form-control" name="email" required></div>
+      <div class="col-md-6"><label class="form-label">Phone Number</label><input type="tel" class="form-control" name="phone"></div>
+      <div class="col-md-6"><label class="form-label">Country of Residence *</label><input type="text" class="form-control" name="country" required></div>
+
+      <!-- Preferences -->
+      <div class="col-md-6"><label class="form-label">Preferred Language *</label>
+        <select class="form-select" name="preferred_language" required>
+          <option value="" disabled selected>Select Language</option>
+          <option>English</option><option>Telugu</option><option>Hindi</option><option>Spanish</option><option>French</option>
+        </select>
+      </div>
+      <div class="col-md-6"><label class="form-label">Query Topic *</label><input type="text" class="form-control" name="query_topic" value="Travel Support" readonly></div>
+      <div class="col-12"><label class="form-label">Your Message / Query *</label><textarea class="form-control" name="query_message" rows="5" required></textarea></div>
+
+      <!-- Travel Specific Fields -->
+      <div class="col-md-6"><label class="form-label">Visa Type *</label>
+        <select class="form-select" name="visa_type" required>
+          <option value="" disabled selected>Select Visa Type</option>
+          <option>Tourist Visa</option><option>Business Visa</option><option>Student Visa</option><option>Other</option>
+        </select>
+      </div>
+     
+      <div class="col-md-6"><label class="form-label">Emergency Contact (Name & Phone) *</label><input type="text" class="form-control" name="emergency_contact" required></div>
+
+      <!-- Newly Added Fields -->
+      
+      <div class="col-md-6"><label class="form-label">Accommodation Required? *</label>
+        <select class="form-select" name="accommodation" required>
+          <option value="" disabled selected>Select Option</option>
+          <option>Yes</option><option>No</option>
+        </select>
+      </div>
+      
+      <!-- Consent -->
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="consent" required>
+          <label class="form-check-label">I agree to the <a href="tandc.html">Terms & Conditions</a></label>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="col-12 text-center mt-4">
+        <button type="submit" class="btn btn-submit">Submit Query</button>
+      </div>
+      <div class="col-12 mt-3 text-center" id="form-response" style="display: none;"></div>
+    </div>
+  </form>
+</section>
+
+<!-- JS -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("travel-form");
+    const responseBox = document.getElementById("form-response");
+    const submitBtn = form.querySelector("button[type='submit']");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" }
+      })
+      .then(response => {
+        if (response.ok) {
+          form.reset();
+          responseBox.style.display = "block";
+          responseBox.style.color = "green";
+          responseBox.textContent = "Thank you! Your query has been submitted successfully.";
+        } else {
+          throw new Error("Network response was not ok.");
+        }
+      })
+      .catch(error => {
+        responseBox.style.display = "block";
+        responseBox.style.color = "red";
+        responseBox.textContent = "There was an error submitting the form. Please try again.";
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Query";
+      });
+    });
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
